@@ -57,7 +57,7 @@ class ProjectManager extends Instructor{
         console.log(`${this.name} announces to ${slackChannel}, @channel standy times!`);
     }
     debugsCode(student, subject){
-        console.log(`${this.name} debugs ${studnet.name}'s code on ${subject}`);
+        console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
     }
 }
 
@@ -91,17 +91,45 @@ class Student extends Person{
     }
 }
 
+const teacher = new Instructor({
+    name: "Scotty",
+    age: 32,
+    location: "Texas",
+    favLanguage: "CHINESE",
+    catchPhrase: "heeeeey"
+})
+
+
+
+const pm = new ProjectManager ({
+    name: "Curtis",
+    age: 28,
+    location: "Montana",
+    specialty: "Farting",
+    favLanguage: "CSS",
+    catchPhrase: "Ruh-Oh",
+    gradClassName: "UX2",
+    favInstructor: "Josh Knell"
+
+})
+
+
 
 const student1 = new Student({
-    name: "student",
+    name: "Meera",
     age: 26,
-    location: "Salt Lake City",
+    location: "Utah",
     previousBackground: "RBT",
     className: "UX2",
     favSubjects: ["CSS", "Research", "Testing"]
 })
 
 student1.listsSubjects();
+pm.debugsCode(student1, "CSS");
+pm.grade(student1, "JavaScript");
+teacher.demo("`Being a Dingus`");
+
+
 /*
 
 ## `lambda-classes` - We need a roster of Lambda School personnel. Build it!
