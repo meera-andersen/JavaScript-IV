@@ -39,7 +39,18 @@ class Instructor extends Person{
     grade(student, subject){
         console.log(`${student.name} receives a perfect score on ${subject}`);
     }
+    studentGrade(student){
+        student.grade = Math.random()*(100 - 0)+1;
+        if (student.grade >= 70 ){
+            console.log(`Hooray! You can graduate!`);
+        } else {
+            console.log(`Keep working hard!`);
+        }
+    }
 }
+
+// * If the student's grade is above a 70% let them graduate! 
+//   * Otherwise go back to grading their assignments to increase their score.
 
 // * `gradClassName`: i.e. CS1
 //   * `favInstructor`: i.e. Sean
@@ -78,6 +89,7 @@ class Student extends Person{
         this.previousBackground = studentAttributes.previousBackground,
         this.className = studentAttributes.className,
         this.favSubjects = studentAttributes.favSubjects
+        this.grade = studentAttributes.grade
     }
     
     listsSubjects(){
@@ -121,13 +133,15 @@ const student1 = new Student({
     location: "Utah",
     previousBackground: "RBT",
     className: "UX2",
-    favSubjects: ["CSS", "Research", "Testing"]
+    favSubjects: ["CSS", "Research", "Testing"],
+    grade : 95
 })
 
 student1.listsSubjects();
 pm.debugsCode(student1, "CSS");
 pm.grade(student1, "JavaScript");
 teacher.demo("`Being a Dingus`");
+teacher.studentGrade(student1);
 
 
 /*
@@ -202,7 +216,10 @@ const fred = new Instructor({
 * Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
 * Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
 * Add a graduate method to a student.
+
+
   * This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
-  * If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
+  * If the student's grade is above a 70% let them graduate! 
+  * Otherwise go back to grading their assignments to increase their score.
 
   */
