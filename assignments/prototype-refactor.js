@@ -131,17 +131,17 @@ class Humanoid extends CharacterStats{
   
   //________________Villain________________
 
-class Villain extends Humanoid{
-    constructor(villainAttributes){
-        super(villainAttributes)
-    }
-    leech(character){
-        if (character.healthPoints <= 0) {
-            return character.destroy;
-            } else
-            return `A direct hit! ${character.takeDamage(character)} and only has ${character.healthPoints} hp remaining.`
-    };
-}
+// class Villain extends Humanoid{
+//     constructor(villainAttributes){
+//         super(villainAttributes)
+//     }
+//     leech(character){
+//         if (character.healthPoints <= 0) {
+//             return character.destroy;
+//             } else
+//             return `A direct hit! ${character.takeDamage(character)} and only has ${character.healthPoints} hp remaining.`
+//     };
+// }
   
 //   function Villain(villainAttributes){
 //     Humanoid.call(this, villainAttributes);
@@ -241,22 +241,22 @@ class Villain extends Humanoid{
       language: 'Probabaly White Guy',
     });
   
-    const villain = new Villain({
-      createdAt: new Date(),
-      dimensions: {
-        length: 1,
-        width: 2,
-        height: 4,
-      },
-      healthPoints: 20,
-      name: 'MalGanis',
-      team: 'The Undead',
-      weapons: [
-        'Claws',
-        'Tail',
-      ],
-      language: 'Black Speech',
-    });
+    // const villain = new Villain({
+    //   createdAt: new Date(),
+    //   dimensions: {
+    //     length: 1,
+    //     width: 2,
+    //     height: 4,
+    //   },
+    //   healthPoints: 20,
+    //   name: 'MalGanis',
+    //   team: 'The Undead',
+    //   weapons: [
+    //     'Claws',
+    //     'Tail',
+    //   ],
+    //   language: 'Black Speech',
+    // });
   
   
     console.log(mage.createdAt); // Today's date
@@ -269,8 +269,8 @@ class Villain extends Humanoid{
     console.log(archer.greet()); // Lilith offers a greeting in Elvish.
     console.log(mage.takeDamage()); // Bruce took damage.
     console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
-    console.log(hero.bigOldSlash(villain));
-    console.log(villain.leech())
+    // console.log(hero.bigOldSlash(villain));
+    // console.log(villain.leech())
   
   
     // Stretch task: 

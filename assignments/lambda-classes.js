@@ -8,12 +8,12 @@
 
 class Person{
     constructor(personAttributes){
-        this.name = personAttributes.name;
-        this.age = personAttributes.age;
-        this.location = personAttributes.location;
+        this.name = personAttributes.name,
+        this.age = personAttributes.age,
+        this.location = personAttributes.location
     }
     speak(){
-        return `Hello my name is ${this.name}, I am from ${this.location}`;
+        console.log(`Hello my name is ${this.name}, I am from ${this.location}`);
     }
 }
 
@@ -70,6 +70,8 @@ class ProjectManager extends Instructor{
 //   * `PRAssignment` a method that receives a subject as an argument and logs out that the `student.name has submitted a PR for {subject}`
 //   * `sprintChallenge` similar to PRAssignment but logs out `student.name has begun sprint challenge on {subject}`
 
+    
+
 class Student extends Person{
     constructor(studentAttributes){
         super(studentAttributes);
@@ -77,9 +79,10 @@ class Student extends Person{
         this.className = studentAttributes.className,
         this.favSubjects = studentAttributes.favSubjects
     }
-    listsSubjects(array){
-        console.log(array);
-    }
+    
+    listsSubjects(){
+        this.favSubjects.forEach(item => console.log(item));
+        };
     PRAssignment(subject){
         console.log(`${this.name} has submitted a PR for ${subject}`);
     }
@@ -88,6 +91,17 @@ class Student extends Person{
     }
 }
 
+
+const student1 = new Student({
+    name: "student",
+    age: 26,
+    location: "Salt Lake City",
+    previousBackground: "RBT",
+    className: "UX2",
+    favSubjects: ["CSS", "Research", "Testing"]
+})
+
+student1.listsSubjects();
 /*
 
 ## `lambda-classes` - We need a roster of Lambda School personnel. Build it!
